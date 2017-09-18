@@ -1,0 +1,28 @@
+{
+  "name": "curso_angular",
+  "version": "1.0.0",
+  "description": "Curso de AngularJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmorenot87/curso_angular.git"
+  },
+  "keywords": [
+    "Web",
+    "SPA",
+    "AngularJS"
+  ],
+  "author": "Juan Moreno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmorenot87/curso_angular/issues"
+  },
+  "homepage": "https://github.com/jmorenot87/curso_angular#readme",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "bootstrap": "^3.3.7"
+  }
+}
