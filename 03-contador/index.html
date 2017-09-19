@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Acumulador</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/acumulador.controller.js"></script>
+</head>
+<body  ng-app="appMain" ng-controller="AcumuladorController as vm">
+    <p><b>Acumulador</b></p>
+    <p>Control de operación</p>
+    <p>
+        <label for="">Incremento</label><input id="inputName" type="number" ng-model="vm.incremento"></input>
+        <button ng-click="vm.aumentar()">+</button>
+        <button ng-click="vm.disminuir()">-</button>
+    </p>
+    <p><b>Totales</b></p>
+    <p>En el acumulador llevamos {{vm.acumulado}}</p>
+</body>
+</html>

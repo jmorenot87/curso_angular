@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista de la Compra</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/compra.controller.js"></script>
+</head>
+<body  ng-app="appMain" ng-controller="CompraController as $ctrl">
+    <p><h2>Lista de la compra</h2></p>
+    <form>
+        <p>
+            <label for="">Elemento a comparar:</label><input id="inputName" type="text" ng-model="$ctrl.elemento"></input>
+            <button ng-click="$ctrl.add()">Añadir</button>
+        </p>
+    </form>
+    <p><b>Vas a comparar:</b></p>
+    <li ng-repeat="el in $ctrl.aComprar track by $index">{{el}}</li>
+    <ng-include src="'./footer.html'"></ng-include><
+  
+</body>
+
+</html>
