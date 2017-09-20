@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista de Autores</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/autores.controller.js"></script>
+</head>
+<body  ng-app="appMain" ng-controller="AutoresController as $ctrl">
+    <p><h2>Lista de Autores</h2></p>
+    <form>
+        <p>
+            <p><label for="">Elige el orden que deseas:</label>
+                <select id="inputName" ng-model="$ctrl.orden" ng-options="orden as orden.nombre for orden in $ctrl.ordenes track by orden.id">
+                </select>
+            </p>
+            <p><label for="">Elige el género literario que desas:</label>
+                <select id="inputName" type="select" ng-model="$ctrl.genero">
+                    <option value="">Todos</option>
+                    <option value="novela histórica">novela histórica</option>
+                    <option value="terror">terror</option>
+                </select>
+                </p>
+            <p><label for="">Campos a mostrar:</label></p>
+            <p><label for="">País:</label><input id="inputName" type="checkbox" ng-model="$ctrl.pais"></input></p>
+            <p><label for="">Fecha de nacimiento:</label><input id="inputName" type="checkbox" ng-model="$ctrl.date"></input></p>
+        </p>
+    </form>
+    <p><b>Autores:</b></p>
+    <li ng-repeat="autor in $ctrl.autores | filter: $ctrl.genero | orderBy:  $ctrl.orden.id track by $index">
+        {{autor.autor}} - {{autor.genero}} {{$ctrl.pais ? '- '+autor.pais: ''}}  {{$ctrl.date ? '- Nacido el '+ (autor.fechaNacimiento | date:'dd/MM/yyyy'): ''}}
+    </li>
+
+
+    <ng-include src="'./footer.html'"></ng-include>
+  
+</body>
+
+</html>
